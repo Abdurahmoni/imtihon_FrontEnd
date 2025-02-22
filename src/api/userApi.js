@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const userApi = createApi({
     reducerPath: "userApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: process.env.REACT_APP_API_BASE_URL || "http://localhost:3000",
+        baseUrl: "http://localhost:4000",
         prepareHeaders: (headers, { getState }) => {
             if (typeof window !== "undefined") {
                 const token = localStorage.getItem("userToken");
@@ -31,4 +31,5 @@ export const userApi = createApi({
     }),
 });
 
-export const { useGetUserQuery, useGetOneUserQuery, useUpdateUserMutation } = userApi;
+export const { useGetUserQuery, useGetOneUserQuery, useUpdateUserMutation } =
+    userApi;

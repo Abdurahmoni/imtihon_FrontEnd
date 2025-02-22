@@ -24,11 +24,7 @@ export default function SearchPage() {
     const [searchResults, setSearchResults] = useState([]);
     const searchQuery = searchParams.get("query") || "";
     const { data: categories } = useGetCategoriesQuery([]);
-    try {
-        const { data: searchResult, refetch } = useSearchQuery(searchQuery);
-
-   
-    console.log(searchResults);
+    const { data: searchResult, refetch } = useSearchQuery(searchQuery);
 
     useEffect(() => {
         if (searchResult) {
@@ -38,11 +34,8 @@ export default function SearchPage() {
         }
     }, [searchResult]);
     useEffect(() => {
-        refetch(); // Har bir sahifa refresh bo'lganda qaytadan malumotlarni yuklash
+        refetch();
     }, [searchQuery]);
-     } catch (error) {
-        console.log(error);
-    }
 
     const reviewsFunc = (reviews: any) => {
         let sum = 0;
@@ -74,20 +67,19 @@ export default function SearchPage() {
         }
     }, []);
 
-    const [addToWishList] = useAddToWishListMutation();
-    const [deleteWishList] = useDeleteWishListMutation();
-    const handleWishlistToggle = async (
-        productId: string,
-        wishlistsLength: number
-    ) => {
-        if (wishlistsLength === 1) {
-            await deleteWishList(productId).unwrap();
-        } else {
-            await addToWishList(productId).unwrap();
-        }
-        refetch();
-    };
-
+    // const [addToWishList] = useAddToWishListMutation();
+    // const [deleteWishList] = useDeleteWishListMutation();
+    // const handleWishlistToggle = async (
+    //     productId: string,
+    //     wishlistsLength: number
+    // ) => {
+    //     if (wishlistsLength === 1) {
+    //         await deleteWishList(productId).unwrap();
+    //     } else {
+    //         await addToWishList(productId).unwrap();
+    //     }
+    //     refetch();
+    // };
     const handleCategoryToggle = (category: string) => {
         setSelectedCategories((prev) =>
             prev.includes(category)
@@ -201,30 +193,6 @@ export default function SearchPage() {
                                         key={index}
                                     >
                                         <div className="relative">
-                                            <button
-                                                onClick={() => {
-                                                    handleWishlistToggle(
-                                                        item.id,
-                                                        item.wishlists.length
-                                                    );
-                                                    refetch();
-                                                }}
-                                                className="absolute top-2 right-2 z-10 p-1 bg-white bg-opacity-50 rounded-full transition-transform duration-200 active:scale-90"
-                                            >
-                                                <Image
-                                                    src={
-                                                        item.wishlists.length &&
-                                                        item.wishlists[0]
-                                                            .user_id ===
-                                                            user?.id
-                                                            ? "/saqlanganlarbg.svg"
-                                                            : "/saqlanganlar.svg"
-                                                    }
-                                                    alt="wishlist"
-                                                    width={24}
-                                                    height={24}
-                                                />
-                                            </button>
                                             <Carousel className="w-full h-full bg-slate-100 aspect-square">
                                                 <CarouselContent>
                                                     {item.image?.map(

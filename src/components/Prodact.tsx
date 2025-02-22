@@ -142,8 +142,8 @@ export default function Product() {
                                     </p>
                                     <button
                                         onClick={(e) => {
-                                            e.preventDefault(); 
-                                            e.stopPropagation(); 
+                                            e.preventDefault();
+                                            e.stopPropagation();
                                             if (
                                                 !item.cartItems.some(
                                                     (i: any) =>

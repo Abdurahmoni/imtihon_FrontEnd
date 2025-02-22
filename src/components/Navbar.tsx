@@ -153,7 +153,7 @@ export default function Navbar() {
                             <img
                                 src="/user.svg"
                                 alt="User Icon"
-                                className="w-5 h-5"
+                                className="w-5 h-5" 
                             />
                             <span className="hidden md:inline">
                                 {isActive ? user?.last_name : "Kirish"}
