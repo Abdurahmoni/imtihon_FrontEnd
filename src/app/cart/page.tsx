@@ -190,7 +190,7 @@ export default function CartPage() {
                                         />
                                         <div className="flex-shrink-0">
                                             <img
-                                                src={`http://localhost:3000/product/${item.product.image[0]}`}
+                                                src={`https://desirable-stillness-production.up.railway.app/product/${item.product.image[0]}`}
                                                 alt="product"
                                                 className="w-16 h-16 object-cover object-center rounded-md"
                                             />

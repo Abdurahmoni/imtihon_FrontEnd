@@ -84,7 +84,7 @@ export default function WishlistPage() {
                                                     <CarouselItem key={i}>
                                                         <div className="w-full aspect-square ">
                                                             <img
-                                                                src={`http://localhost:3000/product/${img}`}
+                                                                src={`https://desirable-stillness-production.up.railway.app/product/${img}`}
                                                                 alt="product"
                                                                 className="w-full h-full object-cover rounded-t-lg"
                                                             />

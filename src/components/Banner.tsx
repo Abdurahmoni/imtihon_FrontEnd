@@ -30,22 +30,25 @@ export function Banner() {
             >
                 <CarouselContent>
                     {banner?.length > 0 &&
-                        banner.map((item: any) => (
-                            <CarouselItem
-                                key={item.id}
-                                className="w-full rounded-lg"
-                            >
-                                <Card className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-lg">
-                                    <CardContent className="p-0 h-full rounded-lg">
-                                        <img
-                                            src={`http://localhost:3000/banners/${item.image}`}
-                                            alt={item.title}
-                                            className="w-full h-full object-cover object-center rounded-lg"
-                                        />
-                                    </CardContent>
-                                </Card>
-                            </CarouselItem>
-                        ))}
+                        banner.map(
+                            (item: any) =>
+                                item.is_active && (
+                                    <CarouselItem
+                                        key={item.id}
+                                        className="w-full rounded-lg"
+                                    >
+                                        <Card className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-lg">
+                                            <CardContent className="p-0 h-full rounded-lg">
+                                                <img
+                                                    src={`https://desirable-stillness-production.up.railway.app/banners/${item.image}`}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover object-center rounded-lg"
+                                                />
+                                            </CardContent>
+                                        </Card>
+                                    </CarouselItem>
+                                )
+                        )}
                 </CarouselContent>
                 <div className="absolute inset-0 flex items-center justify-between p-2 sm:p-4 pointer-events-none">
                     <CarouselPrevious className="relative top-5 left-0 sm:left-2 md:left-4 pointer-events-auto" />

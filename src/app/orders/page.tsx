@@ -161,7 +161,7 @@ export default function OrdersPage() {
                 rating: rating.rating,
                 comment: rating.comment,
             });
-        })
+        });
         alert("Buyurtmangiz qabul qilindi!");
         router.push("/");
     };
@@ -409,7 +409,7 @@ export default function OrdersPage() {
                                     <div key={index} className="mb-6 last:mb-0">
                                         <div className="flex items-center space-x-2 mb-2">
                                             <img
-                                                src={`http://localhost:3000/product/${item.product.image[0]}`}
+                                                src={`https://desirable-stillness-production.up.railway.app/product/${item.product.image[0]}`}
                                                 alt={item.product.name}
                                                 width={50}
                                                 height={50}
@@ -471,7 +471,7 @@ export default function OrdersPage() {
                                         className="flex items-center gap-4 border-b pb-4 last:border-b-0 last:pb-0"
                                     >
                                         <img
-                                            src={`http://localhost:3000/product/${item.product.image[0]}`}
+                                            src={`https://desirable-stillness-production.up.railway.app/product/${item.product.image[0]}`}
                                             alt={item.product.name}
                                             width={50}
                                             height={50}
