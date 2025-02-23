@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import {
     useGetAllProdactQuery,
     useGetFilterProdactQuery,
@@ -19,7 +19,7 @@ import { useAddToCardMutation } from "@/api/addToCard";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function Product() {
+function ProdactContent() {
     const [addToWishList] = useAddToWishListMutation();
     const [deleteWishList] = useDeleteWishListMutation();
     const [addToCard] = useAddToCardMutation();
@@ -172,5 +172,13 @@ export default function Product() {
                 ))}
             </div>
         </div>
+    );
+}
+
+export default function Product() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ProdactContent />
+        </Suspense>
     );
 }

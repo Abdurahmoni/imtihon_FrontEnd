@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
 import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import ModalManager from "./modals/ModalManager";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useGetCategoriesQuery } from "@/api/categorieApi";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Navbar() {
+function NavbarComponent() {
     const { data: fetchedCategories } = useGetCategoriesQuery([]);
     const [categories, setCategories] = useState([{ name: "Barchasi", id: 0 }]);
 
@@ -209,5 +209,13 @@ export default function Navbar() {
                 <ModalManager isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
             )}
         </div>
+    );
+}
+
+export default function Navbar() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <NavbarComponent />
+        </Suspense>
     );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { MapPin, CreditCard, Truck, Package, Star } from "lucide-react";
@@ -39,7 +39,7 @@ interface ProductRating {
     comment: string;
 }
 
-export default function OrdersPage() {
+function OrdersContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [products, setProducts] = useState<any[]>([]);
@@ -533,5 +533,13 @@ export default function OrdersPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function OrdersPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <OrdersContent />
+        </Suspense>
     );
 }
