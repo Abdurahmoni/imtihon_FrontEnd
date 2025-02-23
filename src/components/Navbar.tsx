@@ -70,7 +70,7 @@ export default function Navbar() {
                         type="text"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-md focus:outline-none focus:border-2 rounded-lg w-full p-2 md:p-2.5 md:pr-8 pr-8"
                         placeholder="Qidiruv"
-                        value={searchQuery || searchText}
+                        value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                     />
