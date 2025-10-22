@@ -51,7 +51,8 @@ function ProdactContent() {
     };
 
     const [user, setUser] = useState<any>(null);
-
+    console.log("sda",user);
+    
     useEffect(() => {
         if (typeof window !== "undefined") {
             setUser(JSON.parse(localStorage.getItem("user") || "null"));
@@ -85,7 +86,7 @@ function ProdactContent() {
                                             item.wishlists.length
                                         );
                                     }}
-                                    className="absolute top-2 right-2 z-50 p-1 bg-white bg-opacity-50 rounded-full transition-transform duration-200 active:scale-90"
+                                    className={`absolute ${user ? "block" : "hidden"} top-2 right-2 z-50 p-1 bg-white bg-opacity-50 rounded-full transition-transform duration-200 active:scale-90`}
                                 >
                                     <Image
                                         src={
@@ -156,7 +157,7 @@ function ProdactContent() {
                                                 refetch();
                                             }
                                         }}
-                                        className="transition-transform duration-200 active:scale-90"
+                                        className={` ${user ? "block" : "hidden"} transition-transform duration-200 active:scale-90`}
                                     >
                                         <Image
                                             src="/savatAddIcon.svg"

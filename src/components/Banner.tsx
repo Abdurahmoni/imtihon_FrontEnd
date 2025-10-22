@@ -50,7 +50,7 @@ export function Banner() {
                                 )
                         )}
                 </CarouselContent>
-                <div className="absolute inset-0 flex items-center justify-between p-2 sm:p-4 pointer-events-none">
+                <div className="absolute inset-0 w-full h-[400px]  flex items-center justify-between p-2 sm:p-4 pointer-events-none">
                     <CarouselPrevious className="relative top-5 left-0 sm:left-2 md:left-4 pointer-events-auto" />
                     <CarouselNext className="relative top-5 right-0 sm:right-2 md:right-4 pointer-events-auto" />
                 </div>
