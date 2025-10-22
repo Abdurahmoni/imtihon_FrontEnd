@@ -108,7 +108,7 @@ function ProdactContent() {
                                                 <CarouselItem key={i}>
                                                     <div className="w-full h-full aspect-square ">
                                                         <img
-                                                            src={`http://localhost:4000/product/${img}`}
+                                                            src={`https://imtihonbackend-production-235e.up.railway.app/product/${img}`}
                                                             alt="product"
                                                             className="w-full h-full  object-cover rounded-t-lg"
                                                         />

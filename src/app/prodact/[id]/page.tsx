@@ -84,7 +84,7 @@ export default function ProductDetail() {
                 <div className="space-y-4">
                     <div className="relative aspect-square bg-white rounded-lg  overflow-hidden">
                         <img
-                            src={`http://localhost:4000/product/${product.image[selectedImage]}`}
+                            src={`https://imtihonbackend-production-235e.up.railway.app/product/${product.image[selectedImage]}`}
                             alt={product.name}
                             className="w-full h-full object-cover object-center"
                         />
@@ -101,7 +101,7 @@ export default function ProductDetail() {
                                 }`}
                             >
                                 <img
-                                    src={`http://localhost:4000/product/${img}`}
+                                    src={`https://imtihonbackend-production-235e.up.railway.app/product/${img}`}
                                     alt={`${product.name} thumbnail ${
                                         index + 1
                                     }`}
