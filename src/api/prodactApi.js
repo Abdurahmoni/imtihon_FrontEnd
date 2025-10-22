@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 export const prodactApi = createApi({
     reducerPath: "prodactApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://desirable-stillness-production.up.railway.app",
+        baseUrl: "http://localhost:4000",
         prepareHeaders: (headers, { getState }) => {
             if (typeof window !== "undefined") {
                 const token = localStorage.getItem("userToken");

@@ -40,8 +40,8 @@ export function Banner() {
                                         <Card className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-lg">
                                             <CardContent className="p-0 h-full rounded-lg">
                                                 <img
-                                                    src={`https://desirable-stillness-production.up.railway.app/banners/${item.image}`}
-                                                    alt={item.title}
+                                                    src={`http://localhost:4000/banners/${item.image}`}
+                                                    alt={item.title + "1"}
                                                     className="w-full h-full object-cover object-center rounded-lg"
                                                 />
                                             </CardContent>

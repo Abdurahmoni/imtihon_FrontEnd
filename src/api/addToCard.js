@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const addToCardApi = createApi({
     reducerPath: "addToCardApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://desirable-stillness-production.up.railway.app",
+        baseUrl: "http://localhost:4000",
         prepareHeaders: (headers, { getState }) => {
             if (typeof window !== "undefined") {
                 const token = localStorage.getItem("userToken");

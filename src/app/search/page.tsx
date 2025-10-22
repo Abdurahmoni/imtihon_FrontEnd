@@ -173,7 +173,7 @@ function SearchContent() {
                                                         <CarouselItem key={i}>
                                                             <div className="w-full h-full aspect-square">
                                                                 <img
-                                                                    src={`https://desirable-stillness-production.up.railway.app/product/${img}`}
+                                                                    src={`http://localhost:4000/product/${img}`}
                                                                     alt="product"
                                                                     className="w-full h-full object-cover rounded-t-lg"
                                                                 />
